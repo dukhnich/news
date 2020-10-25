@@ -1,4 +1,4 @@
-import CategoryList from "../../home/components/category-list";
+import NewsList from "../../home/components/news-list";
 import React from "react";
 import {gql} from "graphql-request";
 import {client} from "../../../shared/hooks/use-query";
@@ -27,7 +27,7 @@ const Good = (props) => {
     console.log(good)
     return (
         <div className="card">
-            <CategoryList categories={categories} />
+            <NewsList categories={categories} />
             <div className="card-header mb-2 d-flex justify-content-between align-items-center">
                 <h5 className="card-title m-0">{name}</h5>
                 <div className="alert alert-info m-0">{price}</div>

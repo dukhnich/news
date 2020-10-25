@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
+import {connect} from "react-redux";
 
 const ProtectedRoute = ({ children, redirectTo, isAuth, ...rest }) => {
 
@@ -26,5 +27,10 @@ ProtectedRoute.defaultProps = {
 };
 
 
-export default ProtectedRoute
-;
+const mapStateToProps = (state) => {
+    return {
+        isAuth: state.auth.isAuth,
+    };
+};
+
+export default connect(mapStateToProps)(ProtectedRoute);

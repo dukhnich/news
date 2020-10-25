@@ -43,8 +43,8 @@ const LoginForm = ({dispatch, status}) => {
             />
             </label>
         </div>
-        <div className={"button-group mb-2"}>
-            <button type="submit" className="btn btn-primary mx-3">Login</button>
+        <div className={"d-flex justify-content-center mb-3"}>
+            <button type="submit" className="btn btn-primary mx-auto">Login</button>
         </div>
         {status === "pending" && <Spinner />}
     </form>)

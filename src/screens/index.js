@@ -1,6 +1,8 @@
 import React from "react";
 import HomeScreen from "./home";
 import Login from "./login";
+import NewsScreen from "./news";
+import AdminScreen from "./admin-screen";
 const NotFound = () => <h1> Page not found</h1>
 
 const routes = [
@@ -13,13 +15,19 @@ const routes = [
     {
         path: "/admin",
         exact: true,
-        children: <Login/>,
+        children: <AdminScreen/>,
         isProtected: true
     },
     {
         path: "/",
         exact: true,
         children: <HomeScreen/>,
+        isProtected: false
+    },
+    {
+        path: "/news/:id",
+        exact: true,
+        children: <NewsScreen/>,
         isProtected: false
     },
     {

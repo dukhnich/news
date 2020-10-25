@@ -1,4 +1,9 @@
 .App {
   font-family: sans-serif;
-  text-align: center;
+  /*text-align: center;*/
+}
+
+.article-text {
+  white-space: pre-wrap;
+  text-align: justify;
 }

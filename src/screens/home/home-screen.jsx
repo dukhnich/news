@@ -1,29 +1,28 @@
 import React from "react";
-
-import CategoryList from "./components/category-list";
+import NewsList from "./components/news-list";
 import Spinner from "./../../shared/components/spinner";
 import {connect} from "react-redux";
+import NavBar from "../../shared/components/NavBar";
 
 
-const HomeScreen = ({news, status}) => {
+const HomeScreen = ({status}) => {
 
-  return (
+  return (<>
+    <NavBar text={"Edit"} goTo = "/admin"/>
     <div className="mt-3">
-      <h1>News</h1>
-
+      <h1 className="mx-2">News</h1>
       {status === "pending" ? (
         <Spinner />
       ) : (
-          null
-        // <CategoryList categories={news} />
+        <NewsList/>
       )}
     </div>
+    </>
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    news: state.news.news,
     status: state.news.status,
 
   };

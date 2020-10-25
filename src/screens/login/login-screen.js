@@ -12,14 +12,15 @@ const Login = ({isLoggedIn, error }) => {
             <div className="d-flex align-items-center justify-content-center">
                 <h1>Login</h1>
             </div>
-            <div className="col-sm-12 col-md-5 mx-auto">
+            <div className="col-sm-12 col-md-6 d-flex flex-column align-items-center">
                 <LoginForm/>
-            </div>
-            <div>
                 {error ? (
-                    <span className="text-danger">{error}</span>
+                    <div>
+                        <span className="text-danger">{error}</span>
+                    </div>
                 ) : null}
             </div>
+
         </div>
     );
 };
