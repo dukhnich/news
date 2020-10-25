@@ -20,7 +20,7 @@ const LoginForm = ({dispatch, status}) => {
     };
 
 
-    return (<form onSubmit={onSubmit}>
+    return (<form onSubmit={onSubmit} className={"mx-auto"}>
         <div className="form-group">
             <label>Login
             <input

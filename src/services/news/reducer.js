@@ -2,7 +2,7 @@ import {news} from "./initialNews";
 
 const initialState = {
     news: news,
-    selectedNews: null
+    selectedNews: {}
 };
 
 const newsReducer = (state = initialState, action) => {
@@ -15,7 +15,13 @@ const newsReducer = (state = initialState, action) => {
         case "news/removeNews":
             return {
                 ...state,
-                news: state.news.filter(news => news.id !== action.layload.id)
+                news: state.news.filter(news => news.id !== action.payload)
+
+            };
+        case "news/changeNews":
+            return {
+                ...state,
+                news: action.payload
 
             };
         case "news/selectNews": return {

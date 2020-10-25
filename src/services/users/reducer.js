@@ -2,27 +2,33 @@ import {users} from "./initialUsers";
 
 const initialState = {
     users: users,
-    selectedUsers: null,
-    currentUser: null
+    selectedUser: {},
+    currentUser: {id: localStorage.getItem("token")}
 };
 
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "news/addUser":
+        case "users/addUser":
             return {
                 ...state,
-                news: [...state.news, action.payload]
+                users: [...state.users, action.payload]
             };
         case "users/removeUser":
             return {
                 ...state,
-                news: state.news.filter(news => news.id !== action.layload.id)
+                users: state.users.filter(user => user.id !== action.payload)
 
             };
         case "users/selectUser": return {
             ...state,
-            selectedNews: action.payload
+            selectedUser: action.payload
         };
+        case "users/changeUser":
+            return {
+                ...state,
+                users: action.payload
+
+            };
         case "users/setCurrentUser": return {
             ...state,
             currentUser: action.payload

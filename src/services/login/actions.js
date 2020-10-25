@@ -29,7 +29,7 @@ export const login = (userData) => async (dispatch) => {
         if (response.status !== 200) {
             throw new Error("Some network error")
         }
-        localStorage.setItem("token", "success");
+        localStorage.setItem("token", currentUser.id);
         dispatch({ type: "users/setCurrentUser", payload: {id: currentUser.id} })
 
         dispatch({ type: "login/resolved" })

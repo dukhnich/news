@@ -12,7 +12,7 @@ const Login = ({isLoggedIn, error }) => {
             <div className="d-flex align-items-center justify-content-center">
                 <h1>Login</h1>
             </div>
-            <div className="col-sm-12 col-md-6 d-flex flex-column align-items-center">
+            <div className="d-flex flex-column align-items-center ">
                 <LoginForm/>
                 {error ? (
                     <div>

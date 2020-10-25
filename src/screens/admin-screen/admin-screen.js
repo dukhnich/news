@@ -1,27 +1,29 @@
 import React from "react";
-import {connect} from "react-redux";
 import NavBar from "../../shared/components/NavBar";
+import AddNews from "./components/AddNews";
+import AdminNewsList from "./components/AdminNewsList";
+import AddUser from "./components/AddUser";
+import AdminUsersList from "./components/AdminUsersList";
 
-const AdminScreen = ({currentUser}) => {
+const AdminScreen = () => {
 
     return (
         <>
         <NavBar text={"Home"} goTo = "/"/>
-        <div className={"m-3"}>
+        <div className={"p-3"}>
+            <h1>Settings</h1>
 
-        <h1>Edit content</h1>
+            <h2 className={"mt-5"}>Edit users</h2>
+                <AddUser/>
+                <AdminUsersList />
 
-            {/*{status === "pending" ? <Spinner /> : null}*/}
-            {/*{Object.keys(data.GoodFindOne).length ? <Good data={data.GoodFindOne}/> : null}*/}
+            <h2 className={"mt-5"}>Edit news</h2>
+                <AddNews/>
+                <AdminNewsList />
         </div>
         </>
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-    };
-};
-
-export default connect(mapStateToProps)(AdminScreen);
+export default AdminScreen;
 
